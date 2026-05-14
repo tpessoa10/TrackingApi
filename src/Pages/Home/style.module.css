@@ -1,0 +1,44 @@
+.div{
+    max-width: 100%;
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loc{
+    display: flex;
+    width: 70%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.temp{
+    display: flex;
+    flex-direction: row;
+}
+
+.loc>*{
+    font-size: 36px;
+}
+
+.segundaSection{
+    display: flex;
+    flex-direction: row;
+}
+
+.div>div>h3{
+    font-size: 36px;
+}
+
+.temp{
+    font-size: 72px;
+}
+
+.desc{
+    font-size: 36px;
+}
+
+.humidity{
+    font-size: 18px
+}
