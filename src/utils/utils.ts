@@ -8,3 +8,9 @@ export function arredondarPersonalizado(valor: number): number {
     return Math.floor(valor);
   }
 }
+
+export function msParaKmh(valor: number | undefined): number{
+  if (valor == undefined) return 0
+  const valorKmh = valor * 3.6
+  return Math.round(valorKmh);
+}

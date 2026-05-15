@@ -2,14 +2,14 @@ import { useContext, useEffect, useState } from 'react'
 import api from '../../Services/api'
 import styles from './style.module.css'
 import type { ClimaInterface } from '../../interfaces/ClimaInterface';
-import { arredondarPersonalizado } from '../../utils/utils';
-import { FaLocationDot } from 'react-icons/fa6'
+import { arredondarPersonalizado, msParaKmh } from '../../utils/utils';
 import { SearchContext } from '../../Services/SearchContext';
-
+import type { PrevisaoInterface } from '../../interfaces/PrevisaoInterface';
 
 export default function Home() {
   const { cidade } = useContext(SearchContext)
   const [clima, setClima] = useState<ClimaInterface>();
+  const [previsao, setPrevisao] = useState<PrevisaoInterface>()
   const cidadeFormatada = cidade?.trim()
   
   console.log('cidade é ', cidade)
@@ -19,7 +19,8 @@ export default function Home() {
       try {
         const response = await api.get(cidadeFormatada ? `clima/${cidadeFormatada}` : `clima/teresina`);
         console.log(response)
-        setClima(response.data);
+        setClima(response.data.atual);
+        setPrevisao(response.data.previsao)
       } catch (e) {
         console.log(e);
       }
@@ -30,9 +31,9 @@ export default function Home() {
 
   return (
     <div className={styles.div}>
-      <div>
-        <section className={styles.loc}>
-          <FaLocationDot />
+      <div className={styles.divPrincipal}>
+        <div className={styles.infoPrincipal}>
+          <section className={styles.loc}>
           <span>{clima?.name}</span>
         </section>
         <section className={styles.temp}>
@@ -44,10 +45,15 @@ export default function Home() {
             <p key={index} className={styles.desc}>{item.description}</p>
           ))}
         </section>
-        <section className={styles.segundaSection}>
+        </div>
+        <div className={styles.infoSecundaria}>
+          <section>
           <p className={styles.humidity}>Humidade: <span>{clima?.main.humidity}</span>%</p>
           <p className={styles.humidity}>Sensação Térmica: {clima?.main.temp !== undefined && (<span>{arredondarPersonalizado(clima.main.temp)}°</span>)}</p>
+          <p className={styles.humidity}>Ventos: {msParaKmh(clima?.wind.speed)} Km/h</p>
         </section>
+        </div>
+        
       </div>
     </div>
   );

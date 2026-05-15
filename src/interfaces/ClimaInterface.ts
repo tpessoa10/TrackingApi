@@ -3,7 +3,7 @@ export type ClimaInterface = {
     name: string;
     main: Main;
     weather: Weather[];
-
+    wind: Wind;
 }
 
 export type Main = {
@@ -12,9 +12,12 @@ export type Main = {
     temp: number;
 }
 
-export interface Weather {
+export type Weather = {
   description: string;
   icon: string;
 }
 
 
+export type Wind = {
+    speed: number;
+}
