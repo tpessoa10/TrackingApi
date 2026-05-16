@@ -7,7 +7,7 @@ export default function Layout() {
     <div style={{ display: "flex", flexDirection: "column" }}>
       <SearchProvider>
         <Header />
-        <main style={{ height:"60vh", display:'flex', flexDirection:"row", alignItems:"center", justifyContent:"center"}}>
+        <main style={{ height:"90vh", display:'flex', flexDirection:"row", alignItems:"center", justifyContent:"center"}}>
           <Outlet />
         </main>
       </SearchProvider>
