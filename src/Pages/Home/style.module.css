@@ -9,9 +9,9 @@
 }
 
 .divTemperatura{
-    min-width: 90%;
+    min-width: 80%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
     height: 35%;
@@ -25,7 +25,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    min-width: 90%;
+    min-width: 80%;
     height: 35%;
     border: solid 1px black;
     border-radius: 8px;
@@ -62,7 +62,6 @@
     justify-content: space-evenly;
 }
 
-/* O container que segura todas as linhas */
 .containerInfo {
   display: flex;
   flex-direction: column;
@@ -71,38 +70,43 @@
   margin: 0 auto; /* Centraliza o bloco na tela, se necessário */
 }
 
-/* Cada linha individual */
 .linhaInfo {
   display: flex;
   align-items: center; /* Alinha verticalmente o ícone e os textos no centro da linha */
   width: 100%;
 }
 
-/* Área do ícone: definimos um tamanho fixo para que todos tenham a mesma largura */
 .icone {
   width: 24px;
   font-size: 1.2rem;
   display: flex;
   justify-content: center;
-  margin-right: 12px; /* Espaço entre o ícone e o início do texto */
-  color: #3b82f6; /* Cor opcional para os ícones */
+  margin-right: 12px;
+  color: #897e93; 
 }
 
-/* A legenda (ex: Umidade, Ventos) */
 .legenda {
-  flex: 1; /* Faz a legenda ocupar todo o espaço disponível, empurrando o valor para a direita */
+  flex: 1; 
   text-align: left;
   font-size: 1rem;
-  color: #4b5563; /* Cor cinza para o texto */
+  color: #4b5563; 
 }
 
-/* O valor numérico na ponta direita */
 .valor {
   font-weight: bold;
   font-size: 1rem;
   text-align: right;
-  color: #1f2937;
+  color: #5474a1;
   margin-left: 8px;
+}
+
+.sla{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    height: 80%;
 }
 
 .loc{
@@ -112,9 +116,27 @@
     justify-content: space-between;
 }
 
+.titulo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    height: 20%;
+}
+
 .temp{
     display: flex;
     flex-direction: row;
+}
+.tempContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.numeroTemp{
+    font-size: 72px;
 }
 
 .loc>*{

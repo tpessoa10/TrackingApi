@@ -5,7 +5,7 @@ import type { ClimaInterface } from '../../interfaces/ClimaInterface';
 import { arredondarPersonalizado, formatarData, msParaKmh } from '../../utils/utils';
 import { SearchContext } from '../../Services/SearchContext';
 import type { PrevisaoInterface } from '../../interfaces/PrevisaoInterface';
-import { FaArrowUp, FaArrowDown, FaTemperatureHigh } from "react-icons/fa6";
+import { FaArrowUp, FaArrowDown, FaTemperatureHigh, FaHeart } from "react-icons/fa6";
 import { MdWaterDrop } from "react-icons/md";
 import { PiWind } from "react-icons/pi";
 
@@ -38,59 +38,68 @@ export default function Home() {
   return (
     <div className={styles.div}>
       <div className={styles.divTemperatura}>
-        <div className={styles.infoPrincipal}>
-          <section className={styles.loc}>
-            <span>{clima?.name}</span>
-          </section>
-          <section className={styles.temp}>
-            <p className={styles.temp}>{clima?.main.temp !== undefined && (<span>{arredondarPersonalizado(clima.main.temp)}°</span>)}</p>
-            <img src={`http://openweathermap.org/img/wn/${clima?.weather[0].icon}@2x.png`} alt="Clima" />
-          </section>
-          <section>
-            {clima?.weather.map((item, index) => (
-              <p key={index} className={styles.desc}>{item.description}</p>
-            ))}
-          </section>
+        <div className={styles.titulo}>
+          <h3>Temperatura Atual</h3>
+          <FaHeart />
         </div>
-        <div className={styles.infoSecundaria}>
-          <section className={styles.containerInfo}>
+        <div className={styles.sla}>
+          <div className={styles.infoPrincipal}>
+            {/* Header com a Localização */}
+            <section className={styles.loc}>
+              <h2>{clima?.name}</h2>
+            </section>
 
-            {/* Linha da Temperatura Máxima */}
-            <div className={styles.linhaInfo}>
-              <FaArrowUp className={styles.icone} />
-              <span className={styles.legenda}>Max</span>
-              <span className={styles.valor}>{arredondarPersonalizado(clima?.main?.temp_max ?? 0)}°</span>
-            </div>
+            {/* Bloco Central com Temperatura e Ícone */}
+            <section className={styles.tempContainer}>
+              <span className={styles.numeroTemp}>
+                {arredondarPersonalizado(clima?.main?.temp ?? 0)}°
+              </span>
 
-            {/* Linha da Temperatura Mínima */}
-            <div className={styles.linhaInfo}>
-              <FaArrowDown className={styles.icone} />
-              <span className={styles.legenda}>Min</span>
-              <span className={styles.valor}>{arredondarPersonalizado(clima?.main?.temp_min ?? 0)}°</span>
-            </div>
+              {clima?.weather?.[0]?.icon && (
+                <img
+                  src={`http://openweathermap.org/img/wn/${clima.weather[0].icon}@2x.png`}
+                  alt={`Clima em ${clima?.name}`}
+                  className={styles.iconeClima}
+                />
+              )}
+            </section>
 
-            {/* Linha da Umidade */}
-            <div className={styles.linhaInfo}>
-              <MdWaterDrop className={styles.icone} />
-              <span className={styles.legenda}>Umidade</span>
-              <span className={styles.valor}>{clima?.main?.humidity ?? 0}%</span>
-            </div>
-
-            {/* Linha da Sensação Térmica */}
-            <div className={styles.linhaInfo}>
-              <FaTemperatureHigh className={styles.icone} />
-              <span className={styles.legenda}>Sensação Térmica</span>
-              <span className={styles.valor}>{arredondarPersonalizado(clima?.main?.feels_like ?? 0)}°</span>
-            </div>
-
-            {/* Linha dos Ventos */}
-            <div className={styles.linhaInfo}>
-              <PiWind className={styles.icone} />
-              <span className={styles.legenda}>Ventos</span>
-              <span className={styles.valor}>{msParaKmh(clima?.wind?.speed)} Km/h</span>
-            </div>
-
-          </section>
+            {/* Descrição do Clima (Sem o .map()) */}
+            <section className={styles.descContainer}>
+              <p className={styles.desc}>
+                {clima?.weather?.[0]?.description}
+              </p>
+            </section>
+          </div>
+          <div className={styles.infoSecundaria}>
+            <section className={styles.containerInfo}>
+              <div className={styles.linhaInfo}>
+                <FaArrowUp className={styles.icone} />
+                <span className={styles.legenda}>Max</span>
+                <span className={styles.valor}>{arredondarPersonalizado(clima?.main?.temp_max ?? 0)}°</span>
+              </div>
+              <div className={styles.linhaInfo}>
+                <FaArrowDown className={styles.icone} />
+                <span className={styles.legenda}>Min</span>
+                <span className={styles.valor}>{arredondarPersonalizado(clima?.main?.temp_min ?? 0)}°</span>
+              </div>
+              <div className={styles.linhaInfo}>
+                <MdWaterDrop className={styles.icone} />
+                <span className={styles.legenda}>Umidade</span>
+                <span className={styles.valor}>{clima?.main?.humidity ?? 0}%</span>
+              </div>
+              <div className={styles.linhaInfo}>
+                <FaTemperatureHigh className={styles.icone} />
+                <span className={styles.legenda}>Sensação Térmica</span>
+                <span className={styles.valor}>{arredondarPersonalizado(clima?.main?.feels_like ?? 0)}°</span>
+              </div>
+              <div className={styles.linhaInfo}>
+                <PiWind className={styles.icone} />
+                <span className={styles.legenda}>Ventos</span>
+                <span className={styles.valor}>{msParaKmh(clima?.wind?.speed)} Km/h</span>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
       <div className={styles.divPrevisao}>
