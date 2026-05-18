@@ -5,17 +5,19 @@
     align-items: center;
     min-width: 100%;
     height: 100%;
-    border: solid 5px red;
+    background-color: #e7ebef;
 }
 
 .divTemperatura{
-    border: solid;
     min-width: 90%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     height: 35%;
+    margin-bottom: 16px;
+    border: solid 1px black;
+    border-radius: 8px;
 }
 
 .divPrevisao{
@@ -24,15 +26,83 @@
     align-items: center;
     justify-content: center;
     min-width: 90%;
-    border: solid;
     height: 35%;
+    border: solid 1px black;
+    border-radius: 8px;
+}
+
+.divPrevisao>section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.divPrevisao{
+    justify-content: space-around;
 }
 
 .infoSecundaria{
+    height: 70%;
+    width: 15%;
+}
+
+.infoSecundaria>section{
     display: flex;
     flex-direction: column;
     height: fit-content;
-    border: solid;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: normal;
+}
+.infoSecundaria>section>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/* O container que segura todas as linhas */
+.containerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Espaçamento vertical entre cada linha */
+  max-width: 350px; /* Limita a largura para o alinhamento ficar visível */
+  margin: 0 auto; /* Centraliza o bloco na tela, se necessário */
+}
+
+/* Cada linha individual */
+.linhaInfo {
+  display: flex;
+  align-items: center; /* Alinha verticalmente o ícone e os textos no centro da linha */
+  width: 100%;
+}
+
+/* Área do ícone: definimos um tamanho fixo para que todos tenham a mesma largura */
+.icone {
+  width: 24px;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  margin-right: 12px; /* Espaço entre o ícone e o início do texto */
+  color: #3b82f6; /* Cor opcional para os ícones */
+}
+
+/* A legenda (ex: Umidade, Ventos) */
+.legenda {
+  flex: 1; /* Faz a legenda ocupar todo o espaço disponível, empurrando o valor para a direita */
+  text-align: left;
+  font-size: 1rem;
+  color: #4b5563; /* Cor cinza para o texto */
+}
+
+/* O valor numérico na ponta direita */
+.valor {
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: right;
+  color: #1f2937;
+  margin-left: 8px;
 }
 
 .loc{
