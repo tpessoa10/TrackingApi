@@ -5,7 +5,7 @@
     align-items: center;
     min-width: 100%;
     height: 100%;
-    background-color: #e7ebef;
+    background: linear-gradient(to bottom, #bed7fa, #e4efff);
 }
 
 .divTemperatura{
@@ -14,10 +14,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 35%;
+    height: 40%;
     margin-bottom: 16px;
-    border: solid 1px black;
-    border-radius: 8px;
+    border-radius: 16px;
+    background-color: #fafafa;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .divPrevisao{
@@ -26,9 +27,11 @@
     align-items: center;
     justify-content: center;
     min-width: 80%;
-    height: 35%;
-    border: solid 1px black;
-    border-radius: 8px;
+    height: 40%;
+    border-radius: 16px;
+    background-color: #fafafac6;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 .divPrevisao>section{
@@ -116,7 +119,7 @@
     justify-content: space-between;
 }
 
-.titulo{
+.DivTitulo{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -125,9 +128,20 @@
     height: 20%;
 }
 
+.cidade{
+    color: #5474a1;
+    font-size: 24px;
+}
+
+.titulo{
+    font-weight: 100;
+    color: #4b5563;
+}
+
 .temp{
     display: flex;
     flex-direction: row;
+    color: #5474a1;
 }
 .tempContainer{
     display: flex;
@@ -137,11 +151,9 @@
 
 .numeroTemp{
     font-size: 72px;
+    color: #5474a1;
 }
 
-.loc>*{
-    font-size: 36px;
-}
 
 .segundaSection{
     display: flex;
@@ -156,8 +168,10 @@
     font-size: 72px;
 }
 
-.desc{
-    font-size: 36px;
+.descricao{
+    font-size: 28px;
+    color: #4b5563;
+    font-weight: 100;
 }
 
 .humidity{

@@ -38,23 +38,16 @@ export default function Home() {
   return (
     <div className={styles.div}>
       <div className={styles.divTemperatura}>
-        <div className={styles.titulo}>
-          <h3>Temperatura Atual</h3>
+        <div className={styles.DivTitulo}>
+          <h3 className={styles.titulo}>Temperatura Atual</h3>
           <FaHeart />
         </div>
         <div className={styles.sla}>
           <div className={styles.infoPrincipal}>
-            {/* Header com a Localização */}
             <section className={styles.loc}>
-              <h2>{clima?.name}</h2>
+              <h2 className={styles.cidade}>{clima?.name}</h2>
             </section>
-
-            {/* Bloco Central com Temperatura e Ícone */}
             <section className={styles.tempContainer}>
-              <span className={styles.numeroTemp}>
-                {arredondarPersonalizado(clima?.main?.temp ?? 0)}°
-              </span>
-
               {clima?.weather?.[0]?.icon && (
                 <img
                   src={`http://openweathermap.org/img/wn/${clima.weather[0].icon}@2x.png`}
@@ -62,13 +55,12 @@ export default function Home() {
                   className={styles.iconeClima}
                 />
               )}
+              <span className={styles.numeroTemp}>
+                {arredondarPersonalizado(clima?.main?.temp ?? 0)}°
+              </span>
             </section>
-
             {/* Descrição do Clima (Sem o .map()) */}
-            <section className={styles.descContainer}>
-              <p className={styles.desc}>
-                {clima?.weather?.[0]?.description}
-              </p>
+            <section className={styles.descContainer}><p className={styles.descricao}>{clima?.weather?.[0]?.description}</p>
             </section>
           </div>
           <div className={styles.infoSecundaria}>

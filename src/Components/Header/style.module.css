@@ -1,5 +1,5 @@
 .div{
-    background-color: #073ad4;
+    background: linear-gradient(to bottom, #d6e0f8, #bed7fa);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -7,8 +7,9 @@
     padding-left: 4px;
     padding-right: 4px;
     height: 10vh;
+    border: solid 1px black;
 }
 .a{
-    color: #fff;
+    color: #5474a1;
     text-decoration: none;
 }
