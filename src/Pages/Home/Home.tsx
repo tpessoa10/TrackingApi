@@ -94,19 +94,24 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className={styles.divPrevisao}>
-        {previsao?.map((item, index) => (
-          <section key={index}>
-            <p>{formatarData(item.dt_txt)}</p>
-            <img
-              src={`http://openweathermap.org/img/wn/${item?.weather?.[0]?.icon}@2x.png`}
-              alt="Ícone do clima"
-            />
-            <p>{item.weather?.[0].description}</p>
-            <p><span>{arredondarPersonalizado(item.main.temp_min)}°</span><span>/
-            </span><span>{arredondarPersonalizado(item.main.temp_max)}°</span></p>
-          </section>
-        ))}
+      <div className={styles.nsei}>
+        <div className={styles.DivTitulo}>
+          <h3 className={styles.titulo}>Próximos dias</h3>
+        </div>
+        <div className={styles.divPrevisao}>
+          {previsao?.map((item, index) => (
+            <section key={index}>
+              <p>{formatarData(item.dt_txt)}</p>
+              <img
+                src={`http://openweathermap.org/img/wn/${item?.weather?.[0]?.icon}@2x.png`}
+                alt="Ícone do clima"
+              />
+              <p>{item.weather?.[0].description}</p>
+              <p><span>{arredondarPersonalizado(item.main.temp_min)}°</span><span>/
+              </span><span>{arredondarPersonalizado(item.main.temp_max)}°</span></p>
+            </section>
+          ))}
+        </div>
       </div>
     </div>
   );

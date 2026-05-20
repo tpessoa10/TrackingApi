@@ -1,4 +1,4 @@
-.div{
+.div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,7 +8,7 @@
     background: linear-gradient(to bottom, #E5F9FC, #8BE0F1);
 }
 
-.divTemperatura{
+.divTemperatura {
     min-width: 80%;
     display: flex;
     flex-direction: column;
@@ -21,36 +21,43 @@
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.divPrevisao{
+.divPrevisao {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    width: 100%;
+}
+
+.nsei {
+    display: flex;
+    flex-direction: column;
     min-width: 80%;
-    height: 40%;
+    height: 35%;
     border-radius: 16px;
     background-color: #fafafac6;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-
+    align-items: center;
+    justify-content: center;
 }
 
-.divPrevisao>section{
+.divPrevisao>section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.divPrevisao{
+.divPrevisao {
     justify-content: space-around;
 }
 
-.infoSecundaria{
+.infoSecundaria {
     height: 70%;
     width: 15%;
 }
 
-.infoSecundaria>section{
+.infoSecundaria>section {
     display: flex;
     flex-direction: column;
     height: fit-content;
@@ -59,51 +66,56 @@
     justify-content: space-evenly;
     align-items: normal;
 }
-.infoSecundaria>section>div{
+
+.infoSecundaria>section>div {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
 .containerInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 12px; /* Espaçamento vertical entre cada linha */
-  max-width: 350px; /* Limita a largura para o alinhamento ficar visível */
-  margin: 0 auto; /* Centraliza o bloco na tela, se necessário */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* Espaçamento vertical entre cada linha */
+    max-width: 350px;
+    /* Limita a largura para o alinhamento ficar visível */
+    margin: 0 auto;
+    /* Centraliza o bloco na tela, se necessário */
 }
 
 .linhaInfo {
-  display: flex;
-  align-items: center; /* Alinha verticalmente o ícone e os textos no centro da linha */
-  width: 100%;
+    display: flex;
+    align-items: center;
+    /* Alinha verticalmente o ícone e os textos no centro da linha */
+    width: 100%;
 }
 
 .icone {
-  width: 24px;
-  font-size: 1.2rem;
-  display: flex;
-  justify-content: center;
-  margin-right: 12px;
-  color: #897e93; 
+    width: 24px;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    margin-right: 12px;
+    color: #897e93;
 }
 
 .legenda {
-  flex: 1; 
-  text-align: left;
-  font-size: 1rem;
-  color: #4b5563; 
+    flex: 1;
+    text-align: left;
+    font-size: 1rem;
+    color: #4b5563;
 }
 
 .valor {
-  font-weight: bold;
-  font-size: 1rem;
-  text-align: right;
-  color: #5474a1;
-  margin-left: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: right;
+    color: #5474a1;
+    margin-left: 8px;
 }
 
-.sla{
+.sla {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -112,14 +124,14 @@
     height: 80%;
 }
 
-.loc{
+.loc {
     display: flex;
     width: 70%;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.DivTitulo{
+.DivTitulo {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -128,52 +140,53 @@
     height: 20%;
 }
 
-.cidade{
+.cidade {
     color: #5474a1;
     font-size: 24px;
 }
 
-.titulo{
+.titulo {
     font-weight: 100;
     color: #4b5563;
 }
 
-.temp{
+.temp {
     display: flex;
     flex-direction: row;
     color: #5474a1;
 }
-.tempContainer{
+
+.tempContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.numeroTemp{
+.numeroTemp {
     font-size: 72px;
     color: #5474a1;
 }
 
 
-.segundaSection{
+.segundaSection {
     display: flex;
     flex-direction: row;
 }
 
-.div>div>h3{
+.div>div>h3 {
     font-size: 36px;
 }
 
-.temp{
+.temp {
     font-size: 72px;
 }
 
-.descricao{
+.descricao {
     font-size: 28px;
     color: #4b5563;
     font-weight: 100;
 }
 
-.humidity{
+.humidity {
     font-size: 18px
 }
