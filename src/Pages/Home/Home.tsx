@@ -59,8 +59,8 @@ export default function Home() {
                 {arredondarPersonalizado(clima?.main?.temp ?? 0)}°
               </span>
             </section>
-            {/* Descrição do Clima (Sem o .map()) */}
-            <section className={styles.descContainer}><p className={styles.descricao}>{clima?.weather?.[0]?.description}</p>
+            <section className={styles.descContainer}>
+              <p className={styles.descricao}>{clima?.weather?.[0]?.description}</p>
             </section>
           </div>
           <div className={styles.infoSecundaria}>
