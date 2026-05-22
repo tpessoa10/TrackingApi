@@ -99,6 +99,11 @@
     color: #897e93;
 }
 
+.favorito{
+    font-size: 22px;
+    
+}
+
 .legenda {
     flex: 1;
     text-align: left;

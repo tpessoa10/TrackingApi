@@ -5,8 +5,8 @@ import type { ClimaInterface } from '../../interfaces/ClimaInterface';
 import { arredondarPersonalizado, formatarData, msParaKmh } from '../../utils/utils';
 import { SearchContext } from '../../Services/SearchContext';
 import type { PrevisaoInterface } from '../../interfaces/PrevisaoInterface';
-import { FaArrowUp, FaArrowDown, FaTemperatureHigh, FaHeart } from "react-icons/fa6";
-import { MdWaterDrop } from "react-icons/md";
+import { FaArrowUp, FaArrowDown, FaTemperatureHigh, } from "react-icons/fa6";
+import { MdWaterDrop, MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import { PiWind } from "react-icons/pi";
 
 
@@ -40,7 +40,7 @@ export default function Home() {
       <div className={styles.divTemperatura}>
         <div className={styles.DivTitulo}>
           <h3 className={styles.titulo}>Temperatura Atual</h3>
-          <FaHeart />
+          <MdFavoriteBorder className={styles.favorito}/>
         </div>
         <div className={styles.sla}>
           <div className={styles.infoPrincipal}>
