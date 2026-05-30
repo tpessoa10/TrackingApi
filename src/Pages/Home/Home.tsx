@@ -6,7 +6,7 @@ import { arredondarPersonalizado, formatarData, msParaKmh } from '../../utils/ut
 import { SearchContext } from '../../Services/SearchContext';
 import type { PrevisaoInterface } from '../../interfaces/PrevisaoInterface';
 import { FaArrowUp, FaArrowDown, FaTemperatureHigh, } from "react-icons/fa6";
-import { MdWaterDrop, MdFavorite, MdFavoriteBorder } from "react-icons/md";
+import { MdWaterDrop } from "react-icons/md";
 import { PiWind } from "react-icons/pi";
 
 
@@ -40,7 +40,6 @@ export default function Home() {
       <div className={styles.divTemperatura}>
         <div className={styles.DivTitulo}>
           <h3 className={styles.titulo}>Temperatura Atual</h3>
-          <MdFavoriteBorder className={styles.favorito}/>
         </div>
         <div className={styles.sla}>
           <div className={styles.infoPrincipal}>

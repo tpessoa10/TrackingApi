@@ -1,0 +1,37 @@
+/* Container que envolve toda a aplicação */
+.layoutContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o app ocupe no mínimo a tela inteira */
+  width: 100%;
+
+}
+
+/* O conteúdo principal onde o <Outlet /> (seus cards) será renderizado */
+.mainContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  
+  /* MÁGICA DA RESPONSIVIDADE: */
+  flex: 1; /* Faz o <main> ocupar dinamicamente todo o espaço restante abaixo do Header */
+  min-height: 90vh; /* Substitui o 'height' fixo. Começa em 90, mas pode crescer */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 24px;
+  background: linear-gradient(to bottom, #E5F9FC, #8BE0F1);
+
+}
+
+/* ==========================================================================
+   CONFIGURAÇÃO PARA CELULAR (MOBILE)
+   ========================================================================== */
+@media (max-width: 1000px) {
+  .mainContent {
+    flex-direction: column; /* Muda de linha para coluna no celular */
+    justify-content: flex-start; /* Move o conteúdo para o topo para o scroll funcionar */
+    padding: 16px 8px; /* Diminui o recuo lateral para aproveitar a tela do celular */
+    height: auto; /* Garante que nenhuma altura antiga fique presa */
+  }
+}

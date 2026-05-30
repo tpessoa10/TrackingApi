@@ -23,3 +23,12 @@
     color: #5474a1;
     text-decoration: none;
 }
+
+@media (max-width:600px) {
+    .a{
+        display: none;
+    }
+    .centro{
+        justify-content: center;
+    }
+}

@@ -1,13 +1,14 @@
 import Header from "./Components/Header/Header";
 import { Outlet } from "react-router-dom";
 import { SearchProvider } from './Services/SearchProvider'
+import styles from './styles.module.css'
 
 export default function Layout() {
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div className={styles.layoutContainer}>
       <SearchProvider>
         <Header />
-        <main style={{ height:"90vh", display:'flex', flexDirection:"row", alignItems:"center", justifyContent:"center"}}>
+        <main className={styles.mainContent}>
           <Outlet />
         </main>
       </SearchProvider>

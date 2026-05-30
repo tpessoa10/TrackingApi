@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     min-width: 100%;
-    height: 100%;
+    min-height: 90vh;
     background: linear-gradient(to bottom, #E5F9FC, #8BE0F1);
 }
 
@@ -13,8 +13,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    height: 40%;
+    justify-content: space-evenly;
+    min-height: 40vh;
     margin-bottom: 16px;
     border-radius: 16px;
     background-color: #fafafa;
@@ -29,17 +29,6 @@
     width: 100%;
 }
 
-.nsei {
-    display: flex;
-    flex-direction: column;
-    min-width: 80%;
-    height: 35%;
-    border-radius: 16px;
-    background-color: #fafafac6;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    align-items: center;
-}
-
 .divPrevisao>section {
     display: flex;
     flex-direction: column;
@@ -49,21 +38,7 @@
 
 .divPrevisao {
     justify-content: space-around;
-}
-
-.infoSecundaria {
-    height: 70%;
-    width: 15%;
-}
-
-.infoSecundaria>section {
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    width: 100%;
-    height: 100%;
-    justify-content: space-evenly;
-    align-items: normal;
+    margin-top: 24px;
 }
 
 .infoSecundaria>section>div {
@@ -76,17 +51,13 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    /* Espaçamento vertical entre cada linha */
     max-width: 350px;
-    /* Limita a largura para o alinhamento ficar visível */
     margin: 0 auto;
-    /* Centraliza o bloco na tela, se necessário */
 }
 
 .linhaInfo {
     display: flex;
     align-items: center;
-    /* Alinha verticalmente o ícone e os textos no centro da linha */
     width: 100%;
 }
 
@@ -101,7 +72,6 @@
 
 .favorito{
     font-size: 22px;
-    
 }
 
 .legenda {
@@ -119,14 +89,6 @@
     margin-left: 8px;
 }
 
-.sla {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
-    height: 80%;
-}
 
 .loc {
     display: flex;
@@ -193,4 +155,102 @@
 
 .humidity {
     font-size: 18px
+}
+
+.nsei {
+    display: flex;
+    flex-direction: column;
+    min-width: 80%;
+    min-height: 35vh; 
+    height: auto;     
+    border-radius: 16px;
+    background-color: #fafafac6;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    padding-bottom: 16px; 
+    justify-content: center;
+}
+
+.sla {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 80%; /* Alterado de height para min-height */
+    height: auto;
+    margin-top: 22px;
+}
+
+/* --- CORREÇÃO 2: Ajustar as larguras das informações secundárias --- */
+.infoSecundaria {
+    min-height: 70%;
+    height: auto;
+    width: 35%; /* Aumentado de 15% para 35% para dar espaço ao texto no PC */
+}
+
+.infoSecundaria>section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: normal;
+}
+
+@media (max-width: 1000px) {
+    .div {
+        justify-content: center ; /* Move do centro para o topo, permitindo scroll */
+        height: auto ;
+        min-height: 100vh;
+        padding: 20px 0; /* Dá um respiro no topo e na base da tela */
+    }
+    
+    .infoSecundaria{
+        min-width: 90%;
+    }
+
+    .divTemperatura {
+        width: 92% ;
+        height: auto ; /* OBRIGATÓRIO: Cancela qualquer herança que trave a altura */
+        min-height: fit-content ; /* Força o card a crescer até abraçar tudo */
+        padding: 20px 16px ; /* Dá espaço interno para o header e os dados respirarem */
+        margin-bottom: 24px;
+    }
+
+    .sla {
+        flex-direction: column ;
+        height: auto ;
+        width: 100% ;
+        gap: 24px; 
+    }
+
+    .DivTitulo {
+        width: 100% ;
+        height: auto ;
+        padding: 0 8px 16px 8px ; 
+        box-sizing: border-box;
+    }
+
+    .nsei {
+        width: 92% ;
+        height: auto ;
+        padding: 20px 16px ;
+    }
+
+    .divPrevisao {
+        flex-direction: column ;
+        width: 100% ;
+        gap: 16px;
+    }
+
+    /* Ajuste para transformar os blocos de previsão em linhas no celular */
+    .divPrevisao > section {
+        flex-direction: row ;
+        justify-content: space-between ;
+        align-items: center ;
+        width: 100% ;
+        padding: 8px 12px ;
+        box-sizing: border-box;
+    }
 }
