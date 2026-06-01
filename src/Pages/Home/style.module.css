@@ -177,16 +177,16 @@
     width: 100%;
     justify-content: space-around;
     align-items: center;
-    min-height: 80%; /* Alterado de height para min-height */
+    min-height: 80%; 
     height: auto;
     margin-top: 22px;
 }
 
-/* --- CORREÇÃO 2: Ajustar as larguras das informações secundárias --- */
+
 .infoSecundaria {
     min-height: 70%;
     height: auto;
-    width: 35%; /* Aumentado de 15% para 35% para dar espaço ao texto no PC */
+    width: 35%; 
 }
 
 .infoSecundaria>section {
@@ -200,10 +200,10 @@
 
 @media (max-width: 1000px) {
     .div {
-        justify-content: center ; /* Move do centro para o topo, permitindo scroll */
+        justify-content: center ; 
         height: auto ;
         min-height: 100vh;
-        padding: 20px 0; /* Dá um respiro no topo e na base da tela */
+        padding: 20px 0; 
     }
     
     .infoSecundaria{
@@ -212,9 +212,9 @@
 
     .divTemperatura {
         width: 92% ;
-        height: auto ; /* OBRIGATÓRIO: Cancela qualquer herança que trave a altura */
-        min-height: fit-content ; /* Força o card a crescer até abraçar tudo */
-        padding: 20px 16px ; /* Dá espaço interno para o header e os dados respirarem */
+        height: auto ; 
+        min-height: fit-content ;
+        padding: 20px 16px ; 
         margin-bottom: 24px;
     }
 
@@ -244,7 +244,6 @@
         gap: 16px;
     }
 
-    /* Ajuste para transformar os blocos de previsão em linhas no celular */
     .divPrevisao > section {
         flex-direction: row ;
         justify-content: space-between ;

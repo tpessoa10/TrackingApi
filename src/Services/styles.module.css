@@ -1,15 +1,15 @@
 .toastErro {
   position: fixed;
-  top: 24px; /* Fixado no topo da tela */
+  top: 24px; 
   right: 24px;
   display: flex;
   align-items: center;
-  background-color: #fff5f5; /* Fundo vermelho bem suave */
-  border-left: 4px solid #ef4444; /* Borda vermelha de destaque */
+  background-color: #fff5f5;
+  border-left: 4px solid #ef4444; 
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  z-index: 9999; /* Garante que vai ficar por cima de absolutamente tudo */
+  z-index: 9999;
   max-width: 350px;
   animation: abrirToast 0.3s ease-out;
 }
@@ -48,7 +48,6 @@
   color: #ef4444;
 }
 
-/* Animação suave de entrada */
 @keyframes abrirToast {
   from {
     transform: translateY(-20px);
@@ -60,11 +59,10 @@
   }
 }
 
-/* Responsividade para celular */
 @media (max-width: 600px) {
   .toastErro {
     top: auto;
-    bottom: 16px; /* No celular, fica melhor na base da tela */
+    bottom: 16px;
     left: 16px;
     right: 16px;
     max-width: none;

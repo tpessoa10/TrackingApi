@@ -9,21 +9,23 @@ import { FaArrowUp, FaArrowDown, FaTemperatureHigh, } from "react-icons/fa6";
 import { MdWaterDrop } from "react-icons/md";
 import { PiWind } from "react-icons/pi";
 import { useErrorGlobal } from '../../Services/ErrorContext';
-
+import Loading from '../../Components/Loading/Loading';
 
 
 
 export default function Home() {
-  const { cidade } = useContext(SearchContext)
   const [clima, setClima] = useState<ClimaInterface>();
   const [previsao, setPrevisao] = useState<PrevisaoInterface[]>()
-  const cidadeFormatada = cidade?.trim()
+  const [carregamento, setCarregamento] = useState<boolean>()
+  const { cidade } = useContext(SearchContext)
   const {dispararErro} = useErrorGlobal()
+  const cidadeFormatada = cidade?.trim()
 
   console.log('cidade é ', cidade)
 
   useEffect(() => {
     async function buscarClima() {
+      setCarregamento(true)
       try {
         const response = await api.get(cidadeFormatada ? `clima/${cidadeFormatada}` : `clima/teresina`);
         console.log(response)
@@ -32,6 +34,8 @@ export default function Home() {
       } catch (e) {
         dispararErro('Erro ao buscar por cidade')
         console.log(e);
+      } finally{
+        setCarregamento(false)
       }
     }
 
@@ -39,7 +43,11 @@ export default function Home() {
   }, [cidade]);
 
   return (
-    <div className={styles.div}>
+    <>
+    {carregamento ? (
+      <Loading/>
+    ) : (
+      <div className={styles.div}>
       <div className={styles.divTemperatura}>
         <div className={styles.DivTitulo}>
           <h3 className={styles.titulo}>Temperatura Atual</h3>
@@ -52,9 +60,9 @@ export default function Home() {
             <section className={styles.tempContainer}>
               {clima?.weather?.[0]?.icon && (
                 <img
-                  src={`http://openweathermap.org/img/wn/${clima.weather[0].icon}@2x.png`}
-                  alt={`Clima em ${clima?.name}`}
-                  className={styles.iconeClima}
+                src={`http://openweathermap.org/img/wn/${clima.weather[0].icon}@2x.png`}
+                alt={`Clima em ${clima?.name}`}
+                className={styles.iconeClima}
                 />
               )}
               <span className={styles.numeroTemp}>
@@ -107,7 +115,7 @@ export default function Home() {
               <img
                 src={`http://openweathermap.org/img/wn/${item?.weather?.[0]?.icon}@2x.png`}
                 alt="Ícone do clima"
-              />
+                />
               <p>{item.weather?.[0].description}</p>
               <p><span>{arredondarPersonalizado(item.main.temp_min)}°</span><span>/
               </span><span>{arredondarPersonalizado(item.main.temp_max)}°</span></p>
@@ -116,5 +124,7 @@ export default function Home() {
         </div>
       </div>
     </div>
+    )} 
+</>
   );
 }
