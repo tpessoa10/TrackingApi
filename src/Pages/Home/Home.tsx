@@ -8,6 +8,7 @@ import type { PrevisaoInterface } from '../../interfaces/PrevisaoInterface';
 import { FaArrowUp, FaArrowDown, FaTemperatureHigh, } from "react-icons/fa6";
 import { MdWaterDrop } from "react-icons/md";
 import { PiWind } from "react-icons/pi";
+import { useErrorGlobal } from '../../Services/ErrorContext';
 
 
 
@@ -17,6 +18,7 @@ export default function Home() {
   const [clima, setClima] = useState<ClimaInterface>();
   const [previsao, setPrevisao] = useState<PrevisaoInterface[]>()
   const cidadeFormatada = cidade?.trim()
+  const {dispararErro} = useErrorGlobal()
 
   console.log('cidade é ', cidade)
 
@@ -28,6 +30,7 @@ export default function Home() {
         setClima(response.data.atual);
         setPrevisao(response.data.previsao)
       } catch (e) {
+        dispararErro('Erro ao buscar por cidade')
         console.log(e);
       }
     }
