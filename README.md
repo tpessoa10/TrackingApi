@@ -1,73 +1,34 @@
-# React + TypeScript + Vite
+```markdown
+# 🌤️ Weather Dashboard - Frontend Interface
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma interface moderna, minimalista e totalmente responsiva desenvolvida em **React** com **TypeScript** para exibição de dados climáticos. O aplicativo renderiza dinamicamente as informações trazidas do backend correspondente.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tecnologias e Padrões Utilizados
 
-## React Compiler
+* **React** (utilizando o ecossistema super rápido do **Vite**)
+* **TypeScript**: Tipagem estática para maior segurança do código.
+* **CSS Modules**: Estilização isolada por componente, evitando conflitos de escopo global.
+* **React Context API**: Gerenciamento global de estados (como o termo de busca e o sistema de mensagens de erro).
+* **React Icons**: Pacote de ícones vetoriais modernos.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📦 Recursos Visuais e Engenharia de Software
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* **Global Error Toast**: Um componente customizado acionado via Hook (`useErrorGlobal()`) que exibe mensagens temporizadas no estilo notificação mobile caso uma busca falhe.
+* **Loading State**: Feedback em tempo real através de um spinner animado puramente com CSS enquanto as requisições estão em trânsito.
+* **Design Responsivo Avançado**: CSS estruturado adaptando os cards de previsão para listas horizontais limpas em celulares.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🚀 Como Executar o Projeto Localmente
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 1. Instalação
+Navegue até a pasta raiz deste projeto frontend através do terminal e instale as dependências do ecossistema:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```bash
+npm install
+# ou se preferir utilizar o yarn:
+yarn install
